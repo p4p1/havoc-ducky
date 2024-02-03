@@ -97,8 +97,6 @@ def open_ducky_setting():
 def ducky_generate():
     global ducky_settings
     global ducky_payload
-    print("here")
-    print(ducky_settings["payload_folder"] + ducky_payload)
 
     if os.path.exists(ducky_settings["payload_folder"] + ducky_payload):
         save_path = havocui.savefiledialog("save script")
