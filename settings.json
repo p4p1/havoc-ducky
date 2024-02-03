@@ -1,1 +1,1 @@
-{"bin_file_path": "demon.x64.bin", "server_url_bin": "http://localhost:8080/demon.x64.exe", "payload_folder": "/data/extensions/havoc-ducky/payloads/"}
+{"bin_file_path": "/home/p4p1/payload/demon.x64.bin", "server_url_bin": "http://localhost:8080/demon.x64.exe", "payload_folder": "/opt/Havoc/data/extensions/havoc-ducky/payloads/"}
